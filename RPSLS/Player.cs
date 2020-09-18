@@ -4,11 +4,11 @@ using System.Text;
 
 namespace RPSLS
 {
-    class Player
+    abstract class Player
     {
 
         //member variables
-        public List<Gestures> gestures;
+        public List<string> gestures;
 
         public string name;
         public int score;
@@ -21,17 +21,9 @@ namespace RPSLS
         //constructor
         public Player()
         {
-            gestures = new List<Gestures>();
-            gestures.Add(new Gestures("Rock"));
-            gestures.Add(new Gestures("Paper"));
-            gestures.Add(new Gestures("Scissor"));
-            gestures.Add(new Gestures("Lizard"));
-            gestures.Add(new Gestures("Spock"));
-
+            gestures = new List<string> { "rock", "paper", "scissor", "lizard", "spock" };
+        
             this.score = 0; 
-
-
-
 
         }
 
@@ -39,19 +31,10 @@ namespace RPSLS
 
 
         //member methods
-        public void ChooseGesture()
-        {
-            Console.WriteLine("Choose your weapon!!!" + "\n" + "TYPE: '1' for 'rock' " + "\n" + "TYPE: '2' for 'paper' " + "\n" + "TYPE: '3' for 'scissors' " + "\n" + "TYPE: '4' for 'lizard' " + "\n" + "TYPE: '5' for 'spock' " + "\n" + "\n" + "* To return to the main menu, TYPE: '6' *");
-            string gesture = Console.ReadLine();
+        public abstract void ChooseGesture();
 
-            switch (gesture)
-            {
-                case "1":
-                    "rock";
-                    break;
-                default:
-                    break;
-            }
-        }
+
+
+
     }
 }

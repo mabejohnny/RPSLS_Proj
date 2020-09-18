@@ -24,13 +24,15 @@ namespace RPSLS
         public void RunGame()
         {
             MainMenu();
-            while (this.playerOne.score < 3 && this.playerTwo.score < 3)
+            while (playerOne.score < 3 && playerTwo.score < 3)
             {
                 playerOne.ChooseGesture();
                 playerTwo.ChooseGesture();
 
                 CompareToFindWinner();
             }
+
+            
         }
         public void MainMenu()
         {
@@ -44,7 +46,7 @@ namespace RPSLS
             {
                 case "1":
                     playerOne = new Human();
-                    playerTwo = new Computer("comPuter");
+                    playerTwo = new Computer();
                     SinglePlayerName();
                     break;
                 case "2":
