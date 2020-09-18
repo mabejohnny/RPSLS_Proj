@@ -8,13 +8,13 @@ namespace RPSLS
     {
 
         //member variables
-        public new string name;
+        
 
 
         //constructor
-        public Computer(string name)
+        public Computer()
         {
-            this.name = "comPuter";
+            name = "comPuter";
            
         }
 
