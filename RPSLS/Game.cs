@@ -29,8 +29,10 @@ namespace RPSLS
                 playerOne.ChooseGesture();
                 playerTwo.ChooseGesture();
 
-                CompareToFindWinner();
+                CompareToFindRoundWinner();
             }
+
+                CompareToFindGameWinner();
 
             
         }
@@ -115,7 +117,7 @@ namespace RPSLS
 
         }
 
-        public void CompareToFindWinner()
+        public void CompareToFindRoundWinner()
         {
             if (playerOne.choice == playerTwo.choice)
             {
@@ -236,6 +238,21 @@ namespace RPSLS
                     playerTwo.score++;
                 }
             }
+        }
+
+
+        public void CompareToFindGameWinner()
+        {
+            if(playerOne.score > playerTwo.score)
+            {
+                Console.WriteLine(playerOne.name + " wins the game!!");
+            }
+            else if(playerOne.score < playerTwo.score)
+            {
+                Console.WriteLine(playerTwo.name + " wins the game!!");
+
+            }
+
         }
     }  
 }

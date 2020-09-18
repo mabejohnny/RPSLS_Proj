@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace RPSLS
@@ -23,6 +24,12 @@ namespace RPSLS
         public override void ChooseGesture()
         {
 
+            var random = new Random();
+            var list = new List<string> { "rock", "paper", "scissor", "lizard", "spock" };
+            int index = random.Next(list.Count);
+
+            //how to return???
+            
 
         }
     }
