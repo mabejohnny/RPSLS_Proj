@@ -25,7 +25,7 @@ namespace RPSLS
         public void RunGame()
         {
             MainMenu();
-            while (playerOne.score < 3 && playerTwo.score < 3)
+            while (playerOne.score < 3 || playerTwo.score < 3)
             {
                 playerOne.ChooseGesture();
                 playerTwo.ChooseGesture();
@@ -75,7 +75,7 @@ namespace RPSLS
             switch (userAnswer)
             {
                 case "1":
-                    SinglePlayerName();
+                    
                     Console.Clear();
                     break;
                 case "2":
@@ -99,7 +99,7 @@ namespace RPSLS
             switch (userAnswer)
             {
                 case "1":
-                    MultiPlayerName();
+                   
                     Console.Clear();
                     break;
                 case "2":

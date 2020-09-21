@@ -9,7 +9,7 @@ namespace RPSLS
     {
 
         //member variables
-        
+        public string pick;
 
 
         //constructor
@@ -28,7 +28,30 @@ namespace RPSLS
             var list = new List<string> { "rock", "paper", "scissor", "lizard", "spock" };
             int index = random.Next(list.Count);
 
-            Console.WriteLine("comPuter chose " + index);
+            if(index == 0)
+            {
+                string pick = "rock";
+            }
+            else if (index == 1)
+            {
+                string pick = "paper";
+            }
+            else if (index == 2)
+            {
+                string pick = "scissor";
+            }
+            else if (index == 3)
+            {
+                string pick = "lizard";
+            }
+            else if (index == 4)
+            {
+                string pick = "spock";
+            }
+
+
+
+            Console.WriteLine("Mr.comPuter chose " + pick);
             
         }
     }
