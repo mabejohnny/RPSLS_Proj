@@ -25,11 +25,12 @@ namespace RPSLS
         public override void ChooseGesture()
         {
 
-            int counter = 1;
+            int counter = 0;
             foreach (string type in gestures)
             {
-                Console.WriteLine(counter + ": " + type);
+                Console.WriteLine(counter++ + type);
                 string choice = Console.ReadLine();
+            }
 
 
                 Console.WriteLine("Type the number of your choice:");
@@ -58,7 +59,7 @@ namespace RPSLS
                         break;
 
                 }
-            }
+            
         }
     }
 

@@ -39,8 +39,8 @@ namespace RPSLS
         }
         public void MainMenu()
         {
-            Console.WriteLine("Welcome To The World Famous" + "\n" + "   Rock!" + "\n" + "      Paper!" + "\n" + "         Scissor!" + "\n" + "            Lizard!" + "\n" + "               Spock!");
-            Console.Clear();
+            Console.WriteLine("Welcome To The World Famous" + "\n" + "   Rock!" + "\n" + "      Paper!" + "\n" + "         Scissor!" + "\n" + "            Lizard!" + "\n" + "               Spock!" + "\n" + "\n");
+            
             Console.WriteLine("Please choose from the following options:" + "\n" + "\n" + "- Type '1': For single player" + "\n" + "- Type '2': For multiplayer");
             string userInput = Console.ReadLine();
             Console.Clear();
@@ -65,7 +65,6 @@ namespace RPSLS
                     RunGame();
                     break;
             }
-
         }
 
         public void DoubleCheckRightGameChoiceSinglePlayer()
@@ -77,13 +76,16 @@ namespace RPSLS
             {
                 case "1":
                     SinglePlayerName();
+                    Console.Clear();
                     break;
                 case "2":
                     MainMenu();
+                    Console.Clear();
                     break;
                 default:
                     Console.WriteLine("Error! Please try again");
                     DoubleCheckRightGameChoiceSinglePlayer();
+                    Console.Clear();
                     break;
 
             }
@@ -98,13 +100,16 @@ namespace RPSLS
             {
                 case "1":
                     MultiPlayerName();
+                    Console.Clear();
                     break;
                 case "2":
                     MainMenu();
+                    Console.Clear();
                     break;
                 default:
                     Console.WriteLine("Error! Please try again");
                     DoubleCheckRightGameChoiceMultiPlayer();
+                    Console.Clear();
                     break;
 
             }
@@ -114,8 +119,9 @@ namespace RPSLS
         {
             Console.WriteLine("Please enter your name");
             playerOne.name = Console.ReadLine();
-            Console.WriteLine("Welcome to the game " + playerOne.name);
-            this.ReadTheRulesSingle();
+            Console.Clear();
+            Console.WriteLine("Welcome to the game " + playerOne.name + "\n");
+            ReadTheRulesSingle();
             return playerOne.name;
 
         }
@@ -140,9 +146,9 @@ namespace RPSLS
 
         public void ReadTheRulesSingle()
         {
-            Console.WriteLine("Welcome to your own personal HELL " + playerOne.name + "!" + "\n" + "\n");
-            Console.WriteLine("The rules are simple:" + "\n" + "- Each round will be worth 1 point" + "\n" + "- The first player to win best out of 3 wins!");
-            Console.WriteLine("Rock crushes Scissors" + "\n" + "Scissors cuts Paper" + "\n" + "Paper covers Rock" + "\n" + "Rock crushes Lizard" + "\n" + "Lizard poisons Spock" + "\n" + "Spock Smashes Scissors" + "\n" + "Scissors decapitates Lizard" + "\n" + "Lizard eats Paper" + "\n" + "Paper disproves Spock" + "\n" + "Spock vaporizes Rock");
+            Console.WriteLine("Allow me to introduce myself " + playerOne.name + ".  My name is " + playerTwo.name + ", and I will be beating you today!" + "\n" +"\n");
+            Console.WriteLine("The rules are simple:" + "\n" + "- Each round will be worth 1 point" + "\n" + "- The first player to win best out of 3 wins!" + "\n" + "\n");
+            Console.WriteLine("Rock crushes Scissors" + "\n" + "Scissors cuts Paper" + "\n" + "Paper covers Rock" + "\n" + "Rock crushes Lizard" + "\n" + "Lizard poisons Spock" + "\n" + "Spock Smashes Scissors" + "\n" + "Scissors decapitates Lizard" + "\n" + "Lizard eats Paper" + "\n" + "Paper disproves Spock" + "\n" + "Spock vaporizes Rock" + "\n" + "\n");
             Console.WriteLine("Hit 'enter' when your finished with the rules");
             Console.ReadLine();
             Console.Clear();
@@ -153,8 +159,8 @@ namespace RPSLS
 
         public void ReadTheRulesMulti()
         {
-            Console.WriteLine("Welcome to the game " + playerOne.name + " " + playerTwo.name + "!!!");
-            Console.WriteLine("The rules are simple:" + "\n" + "- Each round will be worth 1 point" + "\n" + "- The first player to win best out of 3 wins!");
+            Console.WriteLine("Welcome to the game " + playerOne.name + " and " + playerTwo.name + "!!!" + "\n" + "\n");
+            Console.WriteLine("The rules are simple:" + "\n" + "- Each round will be worth 1 point" + "\n" + "- The first player to win best out of 3 wins!" + "\n" +"\n");
             Console.WriteLine("Rock crushes Scissors" + "\n" + "Scissors cuts Paper" + "\n" + "Paper covers Rock" + "\n" + "Rock crushes Lizard" + "\n" + "Lizard poisons Spock" + "\n" + "Spock Smashes Scissors" + "\n" + "Scissors decapitates Lizard" + "\n" + "Lizard eats Paper" + "\n" + "Paper disproves Spock" + "\n" + "Spock vaporizes Rock");
             Console.WriteLine("Hit 'enter' when your finished with the rules");
             Console.ReadLine();
