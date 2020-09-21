@@ -16,6 +16,7 @@ namespace RPSLS
         //constructor
         public Game()
         {
+           
 
         }
 
@@ -49,6 +50,7 @@ namespace RPSLS
                 case "1":
                     playerOne = new Human();
                     playerTwo = new Computer();
+                    DoubleCheckRightGameChoice():
                     SinglePlayerName();
                     break;
                 case "2":
@@ -88,7 +90,7 @@ namespace RPSLS
             Console.WriteLine("Welcome To The Battle Royal!" + "\n" + "\n" + playerOne.name + " VS. " + playerTwo.name);
             this.ReadTheRulesMulti();
 
-            return playerOne.name + playerTwo.name;
+            //return playerOne.name + playerTwo.name;
 
         }
 
@@ -121,7 +123,7 @@ namespace RPSLS
         {
             if (playerOne.choice == playerTwo.choice)
             {
-                Console.WriteLine("The computer also chose " + playerTwo.choice + "\n" + "The result is a tie!");
+                Console.WriteLine(playerOne.name + " also chose " + playerTwo.choice + "\n" + "The result is a tie!");
             }
             else if (playerOne.choice == "rock")
             {

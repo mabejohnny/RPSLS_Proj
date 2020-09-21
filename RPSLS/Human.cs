@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace RPSLS
@@ -21,45 +22,45 @@ namespace RPSLS
 
 
         //member methods
-       public override void ChooseGesture()
+        public override void ChooseGesture()
         {
-            Console.WriteLine("Here are your choices:" + "\n" + "\n");
-            for (int i = 0; i < gestures.Count; i++)
+
+            int counter = 1;
+            foreach (string type in gestures)
             {
-                Console.WriteLine(i);
+                Console.WriteLine(counter + ": " + type);
+                string choice = Console.ReadLine();
 
 
-            }
-           
-            Console.WriteLine("Choose your weapon!!!" + "\n" + "TYPE: '1' for 'rock' " + "\n" + "TYPE: '2' for 'paper' " + "\n" + "TYPE: '3' for 'scissors' " + "\n" + "TYPE: '4' for 'lizard' " + "\n" + "TYPE: '5' for 'spock' " + "\n" + "\n" + "* To return to the main menu, TYPE: '6' *");
-            string choice = Console.ReadLine();
+                Console.WriteLine("Type the number of your choice:");
+                
+                string chosenGesture = Console.ReadLine();
 
-            switch (choice)   
-            {
-                case "1":
-                    
-                    break;
-                case "2":
+                switch (chosenGesture)
+                {
+                    case "1":
+                        chosenGesture = gestures[0];
+                        break;
+                    case "paper":
+                        chosenGesture = gestures[1];
+                        break;
+                    case "scissor":
+                        chosenGesture = gestures[2];
+                        break;
+                    case "lizard":
+                        chosenGesture = gestures[3];
+                        break;
+                    case "spock":
+                        chosenGesture = gestures[4];
+                        break;
+                    default:
+                        Console.WriteLine("Error! Please try again");
+                        break;
 
-                    break;
-                case "3":
-
-                    break;
-                case "4":
-
-                    break;
-                case "5":
-
-                    break;
-                case "6":
-                   MainMenu();
-                    break;
-                default:
-                    Console.WriteLine("Error! Please try again");
-                    ChooseGesture();
-                    break;
-
+                }
             }
         }
     }
+
 }
+
