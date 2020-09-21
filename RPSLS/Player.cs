@@ -22,7 +22,7 @@ namespace RPSLS
         public Player()
         {
             gestures = new List<string> { "rock", "paper", "scissor", "lizard", "spock" };
-            this.choice = choice;
+            this.chosenGesture = chosenGesture;
             this.score = 0; 
 
         }

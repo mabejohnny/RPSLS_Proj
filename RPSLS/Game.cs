@@ -50,12 +50,13 @@ namespace RPSLS
                 case "1":
                     playerOne = new Human();
                     playerTwo = new Computer();
-                    DoubleCheckRightGameChoice():
+                    DoubleCheckRightGameChoiceSinglePlayer();
                     SinglePlayerName();
                     break;
                 case "2":
                     playerOne = new Human();
                     playerTwo = new Human();
+                    DoubleCheckRightGameChoiceMultiPlayer();
                     MultiPlayerName();
                     break;
 
@@ -65,6 +66,48 @@ namespace RPSLS
                     break;
             }
 
+        }
+
+        public void DoubleCheckRightGameChoiceSinglePlayer()
+        {
+            Console.WriteLine("You've chosen single-player mode, is that correct?" + "\n" + "\n" + "Type: '1' to continue" + "\n" + "Type: '2' to return to the main menu");
+            string userAnswer = Console.ReadLine();
+
+            switch (userAnswer)
+            {
+                case "1":
+                    SinglePlayerName();
+                    break;
+                case "2":
+                    MainMenu();
+                    break;
+                default:
+                    Console.WriteLine("Error! Please try again");
+                    DoubleCheckRightGameChoiceSinglePlayer();
+                    break;
+
+            }
+        }
+
+        public void DoubleCheckRightGameChoiceMultiPlayer()
+        {
+            Console.WriteLine("You've chosen multi-player mode, is that correct?" + "\n" + "\n" + "Type: '1' to continue" + "\n" + "Type: '2' to return to the main menu");
+            string userAnswer = Console.ReadLine();
+
+            switch (userAnswer)
+            {
+                case "1":
+                    MultiPlayerName();
+                    break;
+                case "2":
+                    MainMenu();
+                    break;
+                default:
+                    Console.WriteLine("Error! Please try again");
+                    DoubleCheckRightGameChoiceMultiPlayer();
+                    break;
+
+            }
         }
 
         public string SinglePlayerName()
@@ -90,7 +133,7 @@ namespace RPSLS
             Console.WriteLine("Welcome To The Battle Royal!" + "\n" + "\n" + playerOne.name + " VS. " + playerTwo.name);
             this.ReadTheRulesMulti();
 
-            //return playerOne.name + playerTwo.name;
+            return playerOne.name + playerTwo.name;
 
         }
 
@@ -121,23 +164,23 @@ namespace RPSLS
 
         public void CompareToFindRoundWinner()
         {
-            if (playerOne.choice == playerTwo.choice)
+            if (playerOne.chosenGesture == playerTwo.chosenGesture)
             {
-                Console.WriteLine(playerOne.name + " also chose " + playerTwo.choice + "\n" + "The result is a tie!");
+                Console.WriteLine(playerOne.name + " " + playerTwo.name +  " choose the same gesture! " + "\n" + "The result is a tie!");
             }
-            else if (playerOne.choice == "rock")
+            else if (playerOne.chosenGesture == "rock")
             {
-                if (playerTwo.choice == "paper")
+                if (playerTwo.chosenGesture == "paper")
                 {
                     Console.WriteLine("paper covers rock..." + playerTwo.name + " wins this round!");
                     playerTwo.score++;
                 }
-                else if (playerTwo.choice == "scissors")
+                else if (playerTwo.chosenGesture == "scissors")
                 {
                     Console.WriteLine("rock crushes scissors..." + playerOne.name + " wins this round!");
                     playerOne.score++;
                 }
-                else if (playerTwo.choice == "lizard")
+                else if (playerTwo.chosenGesture == "lizard")
                 {
                     Console.WriteLine("rock crushes lizard..." + playerOne.name + " wins this round!");
                     playerOne.score++;
@@ -148,19 +191,19 @@ namespace RPSLS
                     playerTwo.score++;
                 }
             }
-            else if (playerOne.choice == "paper")
+            else if (playerOne.chosenGesture == "paper")
             {
-                if (playerTwo.choice == "rock")
+                if (playerTwo.chosenGesture == "rock")
                 {
                     Console.WriteLine("paper covers rock..." + playerOne.name + " wins this round!");
                     playerOne.score++;
                 }
-                else if (playerTwo.choice == "scissors")
+                else if (playerTwo.chosenGesture == "scissors")
                 {
                     Console.WriteLine("scissors cut paper..." + playerTwo.name + " wins this round!");
                     playerTwo.score++;
                 }
-                else if (playerTwo.choice == "lizard")
+                else if (playerTwo.chosenGesture == "lizard")
                 {
                     Console.WriteLine("lizard eats paper..." + playerTwo.name + " wins this round!");
                     playerTwo.score++;
@@ -171,19 +214,19 @@ namespace RPSLS
                     playerTwo.score++;
                 }
             }
-            else if (playerOne.choice == "scissors")
+            else if (playerOne.chosenGesture == "scissors")
             {
-                if (playerTwo.choice == "rock")
+                if (playerTwo.chosenGesture == "rock")
                 {
                     Console.WriteLine("rock crushes scissors..." + playerTwo.name + " wins this round!");
                     playerTwo.score++;
                 }
-                else if (playerTwo.choice == "paper")
+                else if (playerTwo.chosenGesture == "paper")
                 {
                     Console.WriteLine("scissors cut paper..." + playerOne.name + " wins this round!");
                     playerOne.score++;
                 }
-                else if (playerTwo.choice == "lizard")
+                else if (playerTwo.chosenGesture == "lizard")
                 {
                     Console.WriteLine("scissors decapitate lizard..." + playerOne.name + " wins this round!");
                     playerOne.score++;
@@ -194,19 +237,19 @@ namespace RPSLS
                     playerTwo.score++;
                 }
             }
-            else if (playerOne.choice == "lizard")
+            else if (playerOne.chosenGesture == "lizard")
             {
-                if (playerTwo.choice == "rock")
+                if (playerTwo.chosenGesture == "rock")
                 {
                     Console.WriteLine("rock crushes lizard..." + playerTwo.name + " wins this round!");
                     playerTwo.score++;
                 }
-                else if (playerTwo.choice == "paper")
+                else if (playerTwo.chosenGesture == "paper")
                 {
                     Console.WriteLine("lizard eats paper..." + playerOne.name + " wins this round!");
                     playerOne.score++;
                 }
-                else if (playerTwo.choice == "scissors")
+                else if (playerTwo.chosenGesture == "scissors")
                 {
                     Console.WriteLine("scissors decapitate lizard..." + playerTwo.name + " wins this round!");
                     playerTwo.score++;
@@ -217,19 +260,19 @@ namespace RPSLS
                     playerOne.score++;
                 }
             }
-            else if (playerOne.choice == "spock")
+            else if (playerOne.chosenGesture == "spock")
             {
-                if (playerTwo.choice == "rock")
+                if (playerTwo.chosenGesture == "rock")
                 {
                     Console.WriteLine("spock vaporizes rock..." + playerOne.name + " wins this round!");
                     playerOne.score++;
                 }
-                else if (playerTwo.choice == "paper")
+                else if (playerTwo.chosenGesture == "paper")
                 {
                     Console.WriteLine("paper disproves spock..." + playerTwo.name + " wins this round!");
                     playerTwo.score++;
                 }
-                else if (playerTwo.choice == "scissors")
+                else if (playerTwo.chosenGesture == "scissors")
                 {
                     Console.WriteLine("spock smashes scissors..." + playerOne.name + " wins this round!");
                     playerOne.score++;
