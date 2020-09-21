@@ -28,9 +28,8 @@ namespace RPSLS
             var list = new List<string> { "rock", "paper", "scissor", "lizard", "spock" };
             int index = random.Next(list.Count);
 
-            //how to return???
+            Console.WriteLine("comPuter chose " + list[index]);
             
-
         }
     }
 }
