@@ -9,7 +9,7 @@ namespace RPSLS
     {
 
         //member variables
-        public string pick;
+        
 
 
         //constructor

@@ -39,8 +39,20 @@ namespace RPSLS
         }
         public void MainMenu()
         {
-            Console.WriteLine("Welcome To The World Famous" + "\n" + "   Rock!" + "\n" + "      Paper!" + "\n" + "         Scissor!" + "\n" + "            Lizard!" + "\n" + "               Spock!" + "\n" + "\n");
+            Console.WriteLine("Welcome To The World Famous" + "\n" + "\n");
             
+            Console.WriteLine("   Rock!" + "\n");
+            Console.WriteLine("       Paper!" + "\n");
+            Console.WriteLine("            Scissor!" + "\n");
+            Console.WriteLine("                   Lizard!" + "\n");
+            Console.WriteLine("                         Spock!" + "\n");
+            Console.WriteLine("                         Spock!" + "\n");
+            Console.WriteLine("                   Lizard!" + "\n");
+            Console.WriteLine("            Scissor!" + "\n");
+            Console.WriteLine("       Paper!" + "\n");
+            Console.WriteLine("  Rock!" + "\n");
+
+            Console.WriteLine("Rock     " + "Paper     " + "Scissor     " + "Lizard     " + "Spock" + "\n" + "\n" + "\n" );
             Console.WriteLine("Please choose from the following options:" + "\n" + "\n" + "- Type '1': For single player" + "\n" + "- Type '2': For multiplayer");
             string userInput = Console.ReadLine();
             Console.Clear();
