@@ -29,29 +29,29 @@ namespace RPSLS
             foreach (string type in gestures)
             {
                 Console.WriteLine(counter++ + " : " + type);
-                //string choice = Console.ReadLine();
+               
             }
 
 
                 Console.WriteLine("Type the number of your choice:");
                 
-                string chosenGesture = Console.ReadLine();
+                chosenGesture = Console.ReadLine();
 
                 switch (chosenGesture)
                 {
                     case "1":
                         chosenGesture = gestures[0];
-                        break;
-                    case "paper":
+                    break;
+                    case "2":
                         chosenGesture = gestures[1];
-                        break;
-                    case "scissor":
+                    break;
+                    case "3":
                         chosenGesture = gestures[2];
-                        break;
-                    case "lizard":
+                    break;
+                    case "4":
                         chosenGesture = gestures[3];
-                        break;
-                    case "spock":
+                    break;
+                    case "5":
                         chosenGesture = gestures[4];
                         break;
                     default:
@@ -59,6 +59,7 @@ namespace RPSLS
                         break;
 
                 }
+            
             
         }
     }

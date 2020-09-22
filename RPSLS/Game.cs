@@ -25,7 +25,7 @@ namespace RPSLS
         public void RunGame()
         {
             MainMenu();
-            while (playerOne.score < 3 || playerTwo.score < 3)
+            while (playerOne.score < 3 && playerTwo.score < 3)
             {
                 playerOne.ChooseGesture();
                 playerTwo.ChooseGesture();
@@ -170,6 +170,7 @@ namespace RPSLS
 
         public void CompareToFindRoundWinner()
         {
+            Console.WriteLine(playerOne.name + " chose: " + playerOne.chosenGesture + "\n" + "\n" + playerTwo.name + " chose: " + playerTwo.chosenGesture + "\n");
             if (playerOne.chosenGesture == playerTwo.chosenGesture)
             {
                 Console.WriteLine(playerOne.name + " " + playerTwo.name +  " choose the same gesture! " + "\n" + "The result is a tie!");
@@ -216,7 +217,7 @@ namespace RPSLS
                 }
                 else
                 {
-                    Console.WriteLine("paper disproves spock <br> You Win! :)");
+                    Console.WriteLine("paper disproves spock..." + playerOne.name + " wins this round!");
                     playerTwo.score++;
                 }
             }
@@ -297,13 +298,40 @@ namespace RPSLS
             if(playerOne.score > playerTwo.score)
             {
                 Console.WriteLine(playerOne.name + " wins the game!!");
+                PlayAgainPrompt();
+                Console.Clear();
             }
             else if(playerOne.score < playerTwo.score)
             {
                 Console.WriteLine(playerTwo.name + " wins the game!!");
-
+                PlayAgainPrompt();
+                Console.Clear();
             }
 
+        }
+
+        public void PlayAgainPrompt()
+        {
+            Console.WriteLine("Nice game " + playerOne.name + "\n" + "\n" + "                    - Type: '1' to return to that main menu" + "\n" + "                    - Type: '2' to quit");
+            string userChoice = Console.ReadLine();
+
+            switch (userChoice)
+            {
+                case "1":
+                    MainMenu();
+                    break;
+                case "2":
+                    Console.WriteLine("Thanks for playing!");
+                    Console.Clear();
+                    Console.WriteLine("Dev by Josh Grimaldi");
+                    Console.Clear();
+                    break;
+                default:
+                    Console.WriteLine("Error! Please try again");
+                    Console.Clear();
+                    PlayAgainPrompt();
+                    break;
+            }
         }
     }  
 }

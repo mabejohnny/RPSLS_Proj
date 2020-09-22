@@ -9,6 +9,7 @@ namespace RPSLS
 
         //member variables
         public List<string> gestures;
+        
 
         public string name;
         public int score;

@@ -30,29 +30,26 @@ namespace RPSLS
 
             if(index == 0)
             {
-                string pick = "rock";
+                chosenGesture = "rock";
             }
             else if (index == 1)
             {
-                string pick = "paper";
+                 chosenGesture = "paper";
             }
             else if (index == 2)
             {
-                string pick = "scissor";
+                 chosenGesture = "scissor";
             }
             else if (index == 3)
             {
-                string pick = "lizard";
+                 chosenGesture = "lizard";
             }
             else if (index == 4)
             {
-                string pick = "spock";
+                 chosenGesture = "spock";
             }
 
-
-
-            Console.WriteLine("Mr.comPuter chose " + pick);
-            
         }
+        
     }
 }
